@@ -20,13 +20,14 @@ public class Loops {
 	 * @return
 	 */
 	public static double computeEuler(int n) {
+		double euler;
 		if (n == 0) {
-			return 1.0;
+			euler = 1.0;
+		} else if (n == 1) {
+			euler = 2.0;
+		} else {
+			euler = ((1 / computeFakultät(n)) + computeEuler(n - 1));
 		}
-		if (n == 1) {
-			return 2.0;
-		}
-		double euler = ((1 / computeFakultät(n)) + computeEuler(n - 1));
 		return euler;
 	}
 
