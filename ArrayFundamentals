@@ -1,0 +1,62 @@
+package de.unistuttgart.iaas.pse.ex01.p2;
+
+public class ArrayFundamentals {
+	/**
+	 * Gibt die groesste Zahl des Arrays zurueck
+	 * 
+	 * @param numbers
+	 * @return
+	 */
+	public static int computeMax(int[] numbers) {
+		int max = numbers[0];
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] > max)
+				max = numbers[i];
+		}
+		return max;
+	}
+
+	/**
+	 * Berechnet die geraden Zahlen des Arrays und diese ausgibt
+	 * 
+	 * @param numbers
+	 * @return
+	 */
+	public static int printEvenNumbers(int[] numbers) {
+		int geradeZahlen = 0;
+		for (int i = 0; i < numbers.length; i++) {
+
+			if (numbers[i] % 2 == 0) {
+				System.out.println(numbers[i]);
+			}
+		}
+		return geradeZahlen;
+
+	}
+
+	/**
+	 * Berechnet die Summe der geraden Zahlen und gibt diese zurueck
+	 * 
+	 * @param numbers
+	 * @return
+	 */
+   	public static int sumEvenElements(int[] numbers) {
+		int summe = 0;
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] % 2 == 0) {
+				summe = summe + numbers[i];
+			}
+
+		}
+		return summe;
+	}
+
+	public static void main(String[] args) {
+		// to test
+		int[] numbers = { 2, 4, 6, 1, 3, 2, 8, 9, 43, 35, 42, 187, 99, 0, 12 };
+		System.out.println(sumEvenElements(numbers));
+		System.out.println(computeMax(numbers));
+		printEvenNumbers(numbers);
+	}
+
+}
